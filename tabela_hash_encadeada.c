@@ -4,7 +4,7 @@ registros com as chaves A, N, L, U, C, I, R, S, T, M, E, O (com cada letra
 correspondendo a sua posição no alfabeto, ex: A = 1, B = 2, C = 3, ...) nesta
 ordem, numa tabela inicialmente vazia de tamanho 7 e, sabendo-se que a função
 
-de espalhamento é h(k) = (k2 + k –1) mod 7 (mod é o resto da divisão), para a k-
+de espalhamento é h(k) = (k^2 + k –1) mod 7 (mod é o resto da divisão), para a k-
 ésima letra do alfabeto e que as colisões foram tratadas com listas encadeadas,
 
 indique quantas comparações seriam necessárias para encontrar os elementos
@@ -40,7 +40,7 @@ int calcular_posicao(char letra) //pass
 	int valor = 0;
 	int k = letra - 64;
 	//printf("k = %d\n", k);
-	return (k*2 + k - 1) % 7;
+	return (k*k + k - 1) % 7;
 }
 
 void funcao_hash(lista *list[],char letra) //aparentemente pass
